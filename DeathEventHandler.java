@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.Date;
 import java.util.logging.Logger;
 import java.io.FileWriter;
+import java.io.IOException;
 
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
@@ -29,15 +30,15 @@ public final class DeathEventHandler {
 		DamageSource source = event.source;
 		Date time = new Date();
 		
-		try {
+		if (entity instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP)entity;
 			String deathMessage = source.getDeathMessage(player) + "," + (int)player.posX + "," + (int)player.posY + "," + (int)player.posZ + "," + player.dimension + "," + time.getTime();
-			FileWriter deathLog = new FileWriter("playerDeaths.log", true);
 			logger.info(deathMessage);
-			deathLog.write(deathMessage + "\n");
-			deathLog.close();
-		} catch (Exception e) {
-			// Ignore other deaths
+			try {
+				FileWriter deathLog = new FileWriter("playerDeaths.log", true);
+				deathLog.write(deathMessage + "\n");
+				deathLog.close();
+			} catch (IOException e){}
 		}
 	}
 }
