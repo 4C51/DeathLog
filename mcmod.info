@@ -1,0 +1,18 @@
+[
+{
+  "modid" : "DeathLog",
+  "name" : "Death Log",
+  "version" : "0.3.0",
+  "url" : "https://github.com/4C51/DeathLog",
+  "credits" : "",
+  "authors": [
+    "4C51"
+  ],
+  "description": "Death Log maintains a log of all player deaths on a server.  Found in playerDeaths.log",
+  "logoFile" : "",
+  "updateUrl" : "",
+  "parent" : "",
+  "screenshots": [
+  ]
+}
+]
