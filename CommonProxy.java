@@ -1,4 +1,4 @@
-package deathlog;
+package foursee.deathlog;
 
 public class CommonProxy {
 	// Client stuff
