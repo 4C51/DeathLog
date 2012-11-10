@@ -31,7 +31,7 @@ public final class DeathEventHandler {
 		
 		try {
 			EntityPlayerMP player = (EntityPlayerMP)entity;
-			String deathMessage = source.getDeathMessage(player) + "," + (int)entity.posX + "," + (int)entity.posY + "," + (int)entity.posZ + "," + time.getTime();
+			String deathMessage = source.getDeathMessage(player) + "," + (int)player.posX + "," + (int)player.posY + "," + (int)player.posZ + "," + player.dimension + "," + time.getTime();
 			FileWriter deathLog = new FileWriter("playerDeaths.log", true);
 			logger.info(deathMessage);
 			deathLog.write(deathMessage + "\n");
