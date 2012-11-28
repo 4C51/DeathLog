@@ -19,7 +19,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid="DeathLog", name="Death Log", version="0.3.2")
+@Mod(modid="DeathLog", name="Death Log", version="0.3.3", dependencies = "after:Mystcraft")
 @NetworkMod(clientSideRequired=false, serverSideRequired=false)
 public class DeathLog {
 	public static final String ID = "DeathLog";
