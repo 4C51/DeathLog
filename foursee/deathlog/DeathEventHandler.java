@@ -36,8 +36,8 @@ public final class DeathEventHandler {
 			EntityPlayerMP player = (EntityPlayerMP)entity;
 			String deathMessage = player.getEntityName() + "," + source.getDamageType();
 			if (source.getSourceOfDamage() instanceof Entity)
-				deathMessage += "," + source.getSourceOfDamage().getEntityName();
-			else
+				deathMessage += "," + source.getEntity().getEntityName();
+			else 
 				deathMessage += ",?";
 			deathMessage += "," + (int)player.posX + "," + (int)player.posY + "," + (int)player.posZ + "," + player.dimension + "," + time.getTime();
 			logger.info(deathMessage);
